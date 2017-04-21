@@ -5,13 +5,11 @@
  * @author F-loat
  */
 
-const markdownEditor = require('./markdown-editor.vue');
+import markdownEditor from './markdown-editor.vue';
 
-const VueSimplemde = {
-  markdownEditor: markdownEditor,
-  install: function(Vue) {
+export default {
+  markdownEditor,
+  install(Vue) {
     Vue.component('markdown-editor', markdownEditor);
   },
 };
-
-module.exports = VueSimplemde;

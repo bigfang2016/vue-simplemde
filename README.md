@@ -17,21 +17,18 @@ npm install vue-simplemde --save
 ## Use
 
 ``` javascript
-// import with ES6
+// import in main.js
 import Vue from 'vue'
 import VueSimplemde from 'vue-simplemde'
+import 'simplemde/dist/simplemde.min.css'
 
-// require with Webpack/Node.js
-var Vue = require('vue')
-var VueSimplemde = require('vue-simplemde')
-
-// use
 Vue.use(VueSimplemde)
 ```
 
 ``` javascript
-// or use with component(ES6)
+// or use with component
 import { markdownEditor } from 'vue-simplemde'
+import 'simplemde/dist/simplemde.min.css'
 
 export default {
   components: {
@@ -89,11 +86,7 @@ export default {
       content: '',
       configs: {
         status: false, // 禁用底部状态栏
-        initialValue: 'hellow', // 设置初始值
-        renderingConfig: {
-          codeSyntaxHighlighting: true, // 开启代码高亮
-          highlightingTheme: 'atom-one-light' // 自定义代码高亮主题，可选列表(https://github.com/isagalaev/highlight.js/tree/master/src/styles)
-        }
+        initialValue: 'hellow' // 设置初始值
       }
     }
   },
@@ -140,10 +133,6 @@ $ npm install --save simplemde-theme-base
 ```
 
 ### use
-``` html
-<markdown-editor :custom-theme="true"></markdown-editor>
-```
-
 ``` javascript
 import 'simplemde-theme-base/dist/simplemde-theme-base.min.css'
 ```
@@ -165,10 +154,6 @@ $ npm install --save github-markdown-css
 ```
 
 ``` javascript
-// 使用默认编辑器主题时
-require.ensure([], () => require('github-markdown-css'), 'markdown-style')
-
-// 使用自定义编辑器主题时
 import 'github-markdown-css'
 ```
 
